@@ -1,11 +1,38 @@
 {
   "name": "be-modding",
   "version": "0.0.0",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "custom-element",
+    "custom-elements",
+    "JSON",
+    "bind",
+    "observe"
+  ],
   "description": "Modify DOM element host when events fire",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "be-modding.js",
+  "module": "be-modding.js",
+  "dependencies": {
+    "be-enhanced": "0.0.162",
+    "be-hive": "0.0.242",
+    "trans-render": "0.0.873"
   },
-  "author": "",
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "ssi-server": "0.0.1",
+    "xtal-element": "0.0.623"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahrus/be-modding.git"
+  },
+  "author": "anderson.bruce.b@gmail.com",
+  "scripts": {
+    "serve": "python3 ./node_modules/ssi-server/ssi_server.py",
+    "test": "playwright test",
+    "safari": "npx playwright wk http://localhost:8000",
+    "update": "ncu -u && npm install"
+  },
   "license": "MIT"
 }
