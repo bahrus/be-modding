@@ -43,22 +43,18 @@ class BeModding extends BE {
                 const {h} = e;
                 e.r = ${eventMerge[1]}
             } ,`;
-            console.log({eventMerge});
         }
         scriptText += `
     }`;
         const script = document.createElement('script');
         script.innerHTML = scriptText;
-        console.log({scriptText});
         document.head.appendChild(script);
         const handlers = script[guid];
         for(const event in handlers){
             enhancedElement.addEventListener(event, this);
             enhancedElement.addEventListener(event, handlers[event]);
         }
-        // console.log({jsExpr, eventHandlerClauses});
         
-        console.log({handlers});
         return /** @type {PAP} */({
             resolved: true,
         });
