@@ -33,8 +33,9 @@ class BeModding extends BE {
         const {jsExpr} = self;
         const eventHandlerClauses = jsExpr.split(reClause);
         const {splitOnce} = await import('trans-render/lib/splitOnce.js');
+        const guid = `a_${crypto.randomUUID()}`;
         let scriptText = `
-        const handlers = {`;
+        document.currentScript['${guid}'] = {`;
         for(const clause of eventHandlerClauses){
             const eventMerge = splitOnce(clause, ':');
             scriptText += `${eventMerge[0]}: e => {
@@ -45,8 +46,14 @@ class BeModding extends BE {
         }
         scriptText += `
     }`;
-        console.log({jsExpr, eventHandlerClauses});
+        const script = document.createElement('script');
+        script.innerHTML = scriptText;
         console.log({scriptText});
+        document.head.appendChild(script);
+        const handlers = script[guid];
+        // console.log({jsExpr, eventHandlerClauses});
+        
+        console.log({handlers});
         return /** @type {PAP} */({
             resolved: true,
         });
