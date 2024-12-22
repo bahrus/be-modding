@@ -89,7 +89,7 @@ class BeModding extends BE {
             target.dispatchEvent(evt);
             const {r} = evt;
             if(r){
-                Object.assign(h, r);
+                await (await import('trans-render/lib/assignGingerly.js')).assignGingerly(h, r);
             }
         }
 
