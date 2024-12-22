@@ -1,6 +1,6 @@
 # be-modding (🕴️) 
 
-Modify DOM element host when events fire
+Modify DOM element host when events fire, in a CSP safe way.
 
 ```html
 <my-component itemscope>
@@ -58,7 +58,7 @@ or
 
 To add different event handlers separate by commas.
 
-## Peer modding
+## Peer modding [TODO]
 
 ```html
 <my-component itemscope>
