@@ -12,11 +12,16 @@
 </head>
 <body>
     <my-component itemscope likes=0>
-        <data value=0 itemprop=likes></data>
-        <button be-modding="click: {likes: h.likes + 1, dislikes: h.dislikes - 1}, mouseover: {likes: h.likes +2}">Like</button> 
+        <div itemprop=likes></div>
+        <button be-modding="click: {likes: h.likes + 1, dislikes: h.dislikes - 1}, mouseoverx: {likes: h.likes +2}">Like</button> 
         <!-- <button be-modding="click: {likes: h.likes - 1}">Dislike</button>
         <button be-modding="click: {likes: 0}">Reset</button> -->
-        <xtal-element infer-props></xtal-element>
+        <xtal-element 
+            infer-props
+            xform='{
+                "data": "likes"
+            }'
+        ></xtal-element>
     </my-component>
 </body>
 </html>
