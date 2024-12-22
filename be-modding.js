@@ -37,7 +37,10 @@ class BeModding extends BE {
         const handlers = {`;
         for(const clause of eventHandlerClauses){
             const eventMerge = splitOnce(clause, ':');
-            scriptText += `${eventMerge[0]}: ${eventMerge[1]},`;
+            scriptText += `${eventMerge[0]}: e => {
+                const {h} = e;
+                return ${eventMerge[1]}
+            } ,`;
             console.log({eventMerge});
         }
         scriptText += `
