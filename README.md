@@ -33,9 +33,18 @@ or
 ```html
 <my-component itemscope>
     <div itemprop=likes></div>
-    <button 🕴️="click: {likes: h.likes + 1}">Like</button> 
-    <button 🕴️="click: {likes: h.likes - 1}">Dislike</button>
-    <button 🕴️="click: {likes: 0}">Reset</button>
+    <button 🕴️="
+        click: {likes: h.likes + 1}">
+        Like
+    </button> 
+    <button 🕴️="
+        click: {likes: h.likes - 1}">
+        Dislike
+    </button>
+    <button 🕴️="
+        click: {likes: 0}">
+        Reset
+    </button>
     <xtal-element 
         prop-defaults='{
             "likes": 0
