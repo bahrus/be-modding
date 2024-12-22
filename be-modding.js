@@ -31,8 +31,13 @@ class BeModding extends BE {
      */
     async processJS(self){
         const {jsExpr} = self;
-        const split = jsExpr.split(reClause);
-        console.log({jsExpr, split});
+        const eventHandlerClauses = jsExpr.split(reClause);
+        const {splitOnce} = await import('trans-render/lib/splitOnce.js');
+        for(const clause of eventHandlerClauses){
+            const eventMerge = splitOnce(clause, ':');
+            console.log({eventMerge});
+        }
+        console.log({jsExpr, eventHandlerClauses});
 
         return /** @type {PAP} */({
             resolved: true,
