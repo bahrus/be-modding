@@ -24,4 +24,18 @@ or
 </my-component>
 ```
 
-To add different event handlers separate by commas
+To add different event handlers separate by commas.
+
+## Peer modding
+
+```html
+<my-component itemscope>
+    <data value=0 itemprop=likes></data>
+    <my-peer-element></my-peer-element>
+    <button 🕴️="click: {likes: h.likes + 1}">Like</button> 
+    <button 🕴️="click: {likes: h.likes - 1}">Dislike</button>
+    <button 🕴️="click: {likes: 0}">Reset</button>
+    <button 🕴️="{click: ['~myPeerElement', {likes: h.likes + 1}]}">
+    <xtal-element infer-props></xtal-element>
+</my-component>
+```
