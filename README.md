@@ -5,9 +5,18 @@ Modify DOM element host when events fire
 ```html
 <my-component itemscope>
     <div itemprop=likes></div>
-    <button be-modding="click: {likes: h.likes + 1, dislikes: h.dislikes - 1}">Like</button> 
-    <button be-modding="click: {likes: h.likes - 1}">Dislike</button>
-    <button be-modding="click: {likes: 0}">Reset</button>
+    <button be-modding="
+        click: {likes: h.likes + 1}">
+        Like
+    </button> 
+    <button be-modding="
+        click: {likes: h.likes - 1}">
+        Dislike
+    </button>
+    <button be-modding="
+        click: {likes: 0}">
+        Reset
+    </button>
     <xtal-element 
         prop-defaults='{
             "likes": 0
