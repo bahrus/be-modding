@@ -1,14 +1,21 @@
-# be-modding (🕴️) [TODO]
+# be-modding (🕴️) 
 
 Modify DOM element host when events fire
 
 ```html
 <my-component itemscope>
-    <data value=0 itemprop=likes></data>
-    <button be-modding="click: {likes: h.likes + 1}">Like</button> 
+    <div itemprop=likes></div>
+    <button be-modding="click: {likes: h.likes + 1, dislikes: h.dislikes - 1}">Like</button> 
     <button be-modding="click: {likes: h.likes - 1}">Dislike</button>
     <button be-modding="click: {likes: 0}">Reset</button>
-    <xtal-element infer-props></xtal-element>
+    <xtal-element 
+        prop-defaults='{
+            "likes": 0
+        }'
+        xform='{
+            "div": "likes"
+        }'
+    ></xtal-element>
 </my-component>
 ```
 
@@ -16,11 +23,18 @@ or
 
 ```html
 <my-component itemscope>
-    <data value=0 itemprop=likes></data>
+    <div itemprop=likes></div>
     <button 🕴️="click: {likes: h.likes + 1}">Like</button> 
     <button 🕴️="click: {likes: h.likes - 1}">Dislike</button>
     <button 🕴️="click: {likes: 0}">Reset</button>
-    <xtal-element infer-props></xtal-element>
+    <xtal-element 
+        prop-defaults='{
+            "likes": 0
+        }'
+        xform='{
+            "div": "likes"
+        }'
+    ></xtal-element>
 </my-component>
 ```
 
@@ -39,3 +53,5 @@ To add different event handlers separate by commas.
     <xtal-element infer-props></xtal-element>
 </my-component>
 ```
+
+[TODO] prevent setting innerHTML, outerHTML
