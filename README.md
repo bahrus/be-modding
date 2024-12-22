@@ -66,10 +66,20 @@ To add different event handlers separate by commas.
 
 ```html
 <my-component itemscope>
-    <data value=0 itemprop=likes></data>
-    <my-peer-element></my-peer-element>
-    <button 🕴️="{click: ['~myPeerElement', {likes: h.likes + 1}]}">
-    <xtal-element infer-props></xtal-element>
+    <my-peer-element likes=18>
+        <div></div>
+        <xtal-element 
+            prop-defaults='{
+                "likes": 0
+            }'
+            xform='{
+                "div": "likes"
+            }'
+        ></xtal-element>
+    </my-peer-element>
+    <button 🕴️ 🕴️-my-peer-element="
+        click: {likes: h.likes + 1}">
+    <xtal-element></xtal-element>
 </my-component>
 ```
 
