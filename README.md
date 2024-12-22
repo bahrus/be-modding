@@ -2,6 +2,10 @@
 
 Modify DOM element host when events fire, in a CSP safe way.
 
+## Alternatives
+
+To invoke a method, consider using [be-invoking](https://github.com/bahrus/be-invoking), or the platform.
+
 ```html
 <my-component itemscope>
     <div itemprop=likes></div>
