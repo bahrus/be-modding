@@ -23,8 +23,8 @@
                 }'
             ></xtal-element>
         </my-peer-element>
-        <button 🕴️-peers 🕴️-my-peer-element="
-            click: {likes: h.likes + 1}">
+        <button 🕴️="
+            click: {'${my-peer-element}?.likes': h.shadowRoot.querySelector('my-peer-element').likes + 1}">
             Like
         </button>
         <xtal-element></xtal-element>
