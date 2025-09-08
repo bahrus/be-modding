@@ -14,16 +14,20 @@ To pass data between peer components, programmatically, use be-mediating [TODO]
 <my-component itemscope>
     <div 🔭 itemprop=likes></div>
     <button be-modding="on click inc likes byAmt `1`">Like</button>
-    <button be-modding="on click inc likes byAmt `-1`">Dislike</button>
-    <button be-modding="on click set likes to `0` as number">Reset</button>
+    <button be-modding="inc likes byAmt `-1`">Dislike</button>
+    <button be-modding="set likes to `0` as number">Reset</button> <!-- prevent setting property ending with HTML -->
+    <button be-modding="toggle isHappy">Toggle Mood</button>
     <xtal-element 
         prop-defaults='{
-            "likes": 0
+            "likes": 0,
+            "isHappy": true,
         }'
 
     ></xtal-element>
 </my-component>
 ```
+
+As we can see, specifying the event is optional.  For buttons, it is assumed to be "click", and for input elements it is assumed to be "input".
 
 ## CSP Safe Scripting Modifications
 
