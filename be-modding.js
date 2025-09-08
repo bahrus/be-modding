@@ -20,7 +20,7 @@ class BeModding extends BE {
             jsExpr: {},
         },
         compacts:{
-            when_jsExpr_changes_invoke_processJS: 0,
+            when_jsExpr_changes_call_processJS: 0,
         },
         positractions: [
             resolved, rejected
